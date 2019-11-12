@@ -45,7 +45,7 @@ namespace OnlineCalculator.Controllers
             return numbers;
         }
 
-        // POST api/values/MostRepetativeWord
+        // GET api/values/MostRepetativeWord
         [HttpGet("MostRepetativeWord")]
         public int MostRepetativeWord(string s)
         {
@@ -69,6 +69,24 @@ namespace OnlineCalculator.Controllers
                 }
             }
             return count;
+        }
+
+        // GET api/values/ReverseString
+        [HttpGet("ReverseString")]
+        public string ReverseString(string s)
+        {
+            char[] charArr = s.ToCharArray();
+                     
+            int length = charArr.Length;
+            char[] newArr = new char[length];
+            for (int i = length - 1; i >= 0 ; i--)
+            {
+                int currindex = length - (i+1);
+                newArr[currindex] = charArr[i];
+                
+            }
+            string newstr = new string(newArr);
+            return newstr;
         }
 
         // POST api/values
