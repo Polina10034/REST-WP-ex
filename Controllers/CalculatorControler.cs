@@ -45,7 +45,7 @@ namespace OnlineCalculator.Controllers
             return numbers;
         }
 
-        // GET api/values/MostRepetativeWord
+        // GET api/values/MostRepetativeWord             task no. 6
         [HttpGet("MostRepetativeWord")]
         public int MostRepetativeWord(string s)
         {
@@ -71,7 +71,7 @@ namespace OnlineCalculator.Controllers
             return count;
         }
 
-        // GET api/values/ReverseString
+        // GET api/values/ReverseString                  task no. 11
         [HttpGet("ReverseString")]
         public string ReverseString(string s)
         {
@@ -89,7 +89,7 @@ namespace OnlineCalculator.Controllers
             return newstr;
         }
 
-        // GET api/values/shorterString
+        // GET api/values/shorterString              task no. 12
         [HttpGet("shorterString")]
         public string shorterString(string s)
         {
@@ -104,6 +104,24 @@ namespace OnlineCalculator.Controllers
 
             }
             string newstr = new string(newArr);
+            return newstr;
+        }
+
+        // GET api/values/twoNumCalculator          task no. 13
+        [HttpGet("twoNumCalculator")]
+        public string twoNumCalculator(double num1 , double num2)
+        {
+            //int[] resultsArr = new int[4];
+            double[] resultsArr = { num1 + num2, num1 - num2, num1 * num2, num1 / num2 };
+            string[] tempArr = new string[5];
+            
+            
+            for (int i = 0; i < resultsArr.Length ; i++)
+            {
+                tempArr[i] = resultsArr[i].ToString("N2");
+            }
+
+            string newstr = string.Join(",", tempArr);
             return newstr;
         }
 
