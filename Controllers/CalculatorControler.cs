@@ -111,7 +111,6 @@ namespace OnlineCalculator.Controllers
         [HttpGet("twoNumCalculator")]
         public string twoNumCalculator(double num1 , double num2)
         {
-            //int[] resultsArr = new int[4];
             double[] resultsArr = { num1 + num2, num1 - num2, num1 * num2, num1 / num2 };
             string[] tempArr = new string[5];
             
@@ -123,6 +122,22 @@ namespace OnlineCalculator.Controllers
 
             string newstr = string.Join(",", tempArr);
             return newstr;
+        }
+
+        // GET api/values/findMaxNum          task no. 15
+        [HttpGet("findMaxNum")]
+        public int findMaxNum(int num1, int num2, int num3)
+        {
+            int max = num1;
+            if(num2 > max)
+            {
+                max = num2;
+                if(num3 > max)
+                {
+                    max = num3;
+                }
+            }
+            return max;
         }
 
         // POST api/values
