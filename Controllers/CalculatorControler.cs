@@ -96,8 +96,8 @@ namespace OnlineCalculator.Controllers
             char[] charArr = s.ToCharArray();
 
             int length = charArr.Length;
-            char[] newArr = new char[length - 1];
-            for (int i = 1; i < length; i++)
+            char[] newArr = new char[length - 2];
+            for (int i = 1; i < length-1; i++)
             {
                 int currindex = (i - 1);
                 newArr[currindex] = charArr[i];
