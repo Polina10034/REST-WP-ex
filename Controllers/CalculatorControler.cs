@@ -89,6 +89,24 @@ namespace OnlineCalculator.Controllers
             return newstr;
         }
 
+        // GET api/values/shorterString
+        [HttpGet("shorterString")]
+        public string shorterString(string s)
+        {
+            char[] charArr = s.ToCharArray();
+
+            int length = charArr.Length;
+            char[] newArr = new char[length - 1];
+            for (int i = 1; i < length; i++)
+            {
+                int currindex = (i - 1);
+                newArr[currindex] = charArr[i];
+
+            }
+            string newstr = new string(newArr);
+            return newstr;
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
